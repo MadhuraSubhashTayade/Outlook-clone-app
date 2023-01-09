@@ -15,7 +15,7 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
   // array of email objects
   const [items, setItems] = useState<EmailItemType[]>([]);
   // array of email objects with body
-  const [bodyItem, setBodyItem] = useState<EmailBodyType>();
+  const [bodyItem, setBodyItem] = useState<EmailBodyType | null>(null);
   const [id, setId] = useState<string>("");
   const [pageNo, setPageNo] = useState<number>(1);
 
@@ -52,9 +52,9 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
     if (!readList.includes(id)) setReadList([...readList, id]);
   };
 
-  const getOpenedEmail = () => {
-    const i = items.find((x) => x.id === id);
-    return i;
+  const getOpenedEmail = (): EmailItemType | null => {
+    const i = items?.find((x) => x.id === id);
+    return i ?? null;
   };
 
   const markAsFav = (id: string) => {

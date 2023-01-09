@@ -7,7 +7,7 @@ html {
   font-size: 62.5%;
 }
 .App {
-  margin: 5rem;
+  margin: 4rem 4.8rem;
   display: flex;
   gap: 2.4rem;
   flex-direction: column;

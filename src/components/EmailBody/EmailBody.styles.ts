@@ -15,7 +15,7 @@ export const StyledEmailBodyContainer = styled.div<StyledBodyProps>`
   grid-template-rows: 0.5fr 8fr;
   row-gap: 1rem;
   justify-items: start;
-  height: auto;
+  height: 100vh;
 
   .icon {
     /* justify-self: end;

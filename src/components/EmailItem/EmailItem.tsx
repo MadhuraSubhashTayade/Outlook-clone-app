@@ -38,12 +38,12 @@ const EmailItem: FC<EmailItemProps> = ({
     return arr.join("");
   };
   const truncateDesc = (desc: string): string => {
-    return desc?.length > 50 ? desc.substr(0, 50 - 1) + "..." : desc;
+    return desc?.length > 44 ? desc.substring(0, 43) + "..." : desc;
   };
 
   return (
     <StyledEmailitemContainer read={emailOpened} tabIndex="1">
-      <EmailIcon nameAvatar={item.from.name[0]} />
+      <EmailIcon nameAvatar={item.from.name[0].toUpperCase()} />
       <div
         className="email-content"
         onClick={() => {

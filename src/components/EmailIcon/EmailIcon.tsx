@@ -8,11 +8,7 @@ interface EmailIconProps {
 const EmailIcon: FC<EmailIconProps> = ({
   nameAvatar,
 }: EmailIconProps): ReactElement => {
-  return (
-    <StyledEmailIconContainer>
-      {nameAvatar.toUpperCase()}
-    </StyledEmailIconContainer>
-  );
+  return <StyledEmailIconContainer>{nameAvatar}</StyledEmailIconContainer>;
 };
 
 export default EmailIcon;

@@ -8,7 +8,7 @@ type StyledEmailItemProps = {
 export const StyledEmailitemContainer = styled.div<StyledEmailItemProps>`
   border: 1px solid #cfd2dc;
   background-color: ${(props) => (props.read ? "#f4f5f9" : "none")};
-  padding: 2rem;
+  padding: 1.4rem 2rem;
   font-size: 1.6rem;
   display: flex;
   border-radius: 1rem;
