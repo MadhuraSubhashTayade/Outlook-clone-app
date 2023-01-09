@@ -16,7 +16,12 @@ export const StyledEmailBodyContainer = styled.div<StyledBodyProps>`
   row-gap: 1rem;
   justify-items: start;
   height: 100vh;
-
+  @media (max-width: 75.9em) {
+    grid-template-columns: 0.6fr 4.3fr 2.7fr;
+  }
+  @media (max-width: 40em) {
+    flex: 9;
+  }
   .icon {
     /* justify-self: end;
     align-self: end; */

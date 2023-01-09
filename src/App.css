@@ -16,6 +16,24 @@ html {
   display: flex;
   gap: 2rem;
 }
+@media (max-width: 75.9em) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 65em) {
+  html {
+    font-size: 52%;
+  }
+}
+@media (max-width: 40em) {
+  html {
+    font-size: 50%;
+  }
+  .App {
+    margin-left: 1.4rem;
+  }
+}
 
 /* .App {
   text-align: center;

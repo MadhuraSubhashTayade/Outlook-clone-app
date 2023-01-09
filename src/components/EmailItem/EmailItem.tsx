@@ -22,12 +22,11 @@ const EmailItem: FC<EmailItemProps> = ({
   readList,
   favList,
 }: EmailItemProps): ReactElement => {
-  const [emailOpened, setEmailOpened] = useState(false);
-  const [emailFavMarked, setEmailFavMarked] = useState(false);
+  const [emailOpened, setEmailOpened] = useState<boolean>(false);
+  const [emailFavMarked, setEmailFavMarked] = useState<boolean>(false);
 
   useEffect(() => {
     setEmailOpened(readList?.includes(item.id));
-    //console.log("fave:", favList?.includes(item.id));
     setEmailFavMarked(favList?.includes(item.id));
   }, [readList, favList, item.id]);
 

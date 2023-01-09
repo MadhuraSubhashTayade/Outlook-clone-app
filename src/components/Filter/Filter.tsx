@@ -1,5 +1,4 @@
 import React, { FC, ReactElement } from "react";
-import { EmailItemType } from "../../types/EmailTypes";
 import { StyledFilterContainer } from "./Filter.styles";
 
 interface FilterProps {

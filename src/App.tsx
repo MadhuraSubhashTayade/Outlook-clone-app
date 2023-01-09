@@ -36,7 +36,7 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
         const emails = res.data.list;
         setItems(emails);
       })
-      .catch();
+      .catch((e) => console.log("Error while fetching email list.", e));
   }, [pageNo]);
 
   const emailOpenClickHandler = (id: string) => {
@@ -47,7 +47,7 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
         const result = res.data;
         setBodyItem(result);
       })
-      .catch();
+      .catch((e) => console.log("Error while fetching email body.", e));
     setId(id);
     if (!readList.includes(id)) setReadList([...readList, id]);
   };
@@ -58,10 +58,9 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
   };
 
   const markAsFav = (id: string) => {
-    console.log(favList, id);
     if (!favList.includes(id)) setFavList([...favList, id]);
-    console.log(favList);
   };
+
   const readClickHandler = () => {
     setReadFilter(!readFilter);
     setUnreadFilter(false);
@@ -77,19 +76,16 @@ const App: FC<AppProps> = ({}: AppProps): ReactElement => {
     setUnreadFilter(false);
     setFavFilter(!favFilter);
   };
+
   const getEmailsList = (): EmailItemType[] => {
     let result = [...items];
-    // console.log("u:" + unreadFilter, "r:" + readFilter, "f:" + favFilter);
     if (readFilter) {
-      // console.log("read clicked");
       return result.filter((x) => readList.includes(x.id));
     }
     if (unreadFilter) {
-      // console.log("unread clicked");
       return result.filter((x) => !readList.includes(x.id));
     }
     if (favFilter) {
-      // console.log("fav clicked");
       return result.filter((x) => favList.includes(x.id));
     }
     return result;
